@@ -1,0 +1,9 @@
+-- 관리자의 실수로 일부 동물의 입양일이 잘못 입력됨
+-- 보호 시작일(AI.DATETIME)보다 입양일(AO.DATETIME)이 더 빠른 동물의 아이디와 이름을 조회
+-- 이때 결과는 보호 시작일이 빠른 순으로 조회해야
+
+SELECT AI.ANIMAL_ID AS ANIMAL_ID, AI.NAME AS NAME
+FROM ANIMAL_INS AI
+JOIN ANIMAL_OUTS AO
+ON AI.ANIMAL_ID = AO.ANIMAL_ID AND AI.DATETIME > AO.DATETIME
+ORDER BY AI.DATETIME;
