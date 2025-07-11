@@ -1,3 +1,6 @@
+import sys
+input = lambda: sys.stdin.readline().rstrip()
+
 n = int(input())
 a_score = b_score = 0
 
