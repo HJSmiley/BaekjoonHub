@@ -6,15 +6,21 @@ n = int(input())
 m = int(input())
 s = input()
 
-pn = "I" + "OI" * n
 answer = 0
+count = 0
 idx = 0
 
-for c in s:
-    if c == "I" and s[idx : idx + 2 * n + 1] == pn:
-        answer += 1
-        if idx + 2 * n + 1 == m:
-            break
-    idx += 1
+while idx < m - 1:
+    if s[idx : idx + 3] == "IOI":
+        count += 1
+
+        if count == n:
+            answer += 1
+            count -= 1
+
+        idx += 2
+    else:
+        count = 0
+        idx += 1
 
 print(answer)
