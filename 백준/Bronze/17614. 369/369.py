@@ -3,8 +3,6 @@ count = 0
 
 for i in range(3, n + 1):
     s = str(i)
-    for j in s:
-        if int(j) in (3, 6, 9):
-            count += 1
+    count += s.count("3") + s.count("6") + s.count("9")
 
 print(count)
